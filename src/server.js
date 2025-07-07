@@ -27,17 +27,18 @@ Hour is: <strong>${getTimeNow().hour} :  ${getTimeNow().minute} : ${
 
 setInterval(() => {
   if (
+    getTimeNow.hour === (1 || 2 || 3 || 4||5||6||7||8||9||10||11||12) &&
     getTimeNow().minute === getTimeNow().minute &&
     getTimeNow().second === 0
   ) {
-    transporter.sendMail(mailOpt, async(err, info) => {
+    transporter.sendMail(mailOpt, (err, info) => {
       if (err) {
-       await console.log(`err from send mail ${err} , ${err.message}`);
+        console.log(`err from send mail ${err} , ${err.message}`);
       } else {
-      await  console.log(`mail Sended`);
+        console.log(`mail Sended`);
       }
     });
   } else {
-     console.log(`${getTimeNow().minute} , ${getTimeNow().second}`);
+    console.log(`${getTimeNow().minute} , ${getTimeNow().second}`);
   }
 }, 1000);
