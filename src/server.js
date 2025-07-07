@@ -38,7 +38,5 @@ setInterval(() => {
         console.log(`mail Sended`);
       }
     });
-  } else {
-    console.log(`${getTimeNow().minute} , ${getTimeNow().second}`);
-  }
+  } 
 }, 1000);
