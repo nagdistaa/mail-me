@@ -28,7 +28,7 @@ Hour is: <strong>${getTimeNow().hour} :  ${getTimeNow().minute} : ${
 setInterval(() => {
   if (
     getTimeNow.hour === (1 || 2 || 3 || 4||5||6||7||8||9||10||11||12) &&
-    getTimeNow().minute === getTimeNow().minute &&
+    getTimeNow().minute === 0 &&
     getTimeNow().second === 0
   ) {
     transporter.sendMail(mailOpt, (err, info) => {
