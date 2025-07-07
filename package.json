@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/srever.js",
-    "server": "nodemon src/srever.js"
+    "start": "node src/serever.js",
+    "server": "nodemon src/serever.js"
   },
   "keywords": [],
   "author": "",
