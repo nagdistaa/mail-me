@@ -18,21 +18,26 @@ const mailOpt = {
   html: `Today is: <strong>${getTimeNow().today}/${getTimeNow().month}/${
     getTimeNow().year
   } </strong>and The
-Hour is: <strong>${getTimeNow().hour} :  ${getTimeNow().minute} : ${getTimeNow().second}</strong>
+Hour is: <strong>${getTimeNow().hour} :  ${getTimeNow().minute} : ${
+    getTimeNow().second
+  }</strong>
 
 `,
 };
 
 setInterval(() => {
-  if (getTimeNow().hour/getTimeNow().hour==  1 &&getTimeNow().minute === 0 && getTimeNow().second == 0) {
-    transporter.sendMail(mailOpt, (err, info) => {
+  if (
+    getTimeNow().minute === getTimeNow().minute &&
+    getTimeNow().second === 0
+  ) {
+    transporter.sendMail(mailOpt, async(err, info) => {
       if (err) {
-        console.log(`err from send mail ${err} , ${err.message}`);
+       await console.log(`err from send mail ${err} , ${err.message}`);
       } else {
-        console.log(`mail Sended`);
+      await  console.log(`mail Sended`);
       }
     });
-  }else{
-    console.log(getTimeNow().hour/getTimeNow().hour)
+  } else {
+     console.log(`${getTimeNow().minute} , ${getTimeNow().second}`);
   }
 }, 1000);
